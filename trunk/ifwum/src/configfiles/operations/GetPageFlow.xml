@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GB2312"?>
+<GetPageFlow>
+
+	<Flow>
+	<!-- 返回一个页面 -->
+		<Step ID="GetPageStep" IJump0="end" IJump1="end" />
+	
+	</Flow>
+
+</GetPageFlow>

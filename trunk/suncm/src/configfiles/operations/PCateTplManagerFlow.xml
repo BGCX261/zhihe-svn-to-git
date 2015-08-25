@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<PCateTplManagerFlow>
+
+	<Flow>
+
+<Step ID="SwitchStep" alias="switch" switchSource="flag" 
+	IJump0="addwidget" 
+	IJump1="delwidget"
+	IJump2="querywidget"
+	IJump-1="TranJournalStep"/>
+	<!-- 向某个模板添加字段 -->	
+		<Step ID="PCateAddWidgetToTplStep" alias="addwidget" IJump0="querywidget" IJump-1="TranJournalStep"/>
+		
+		<Step ID="PCateDelWidgetFromTplStep" alias="delwidget" IJump0="querywidget" IJump-1="TranJournalStep"/>
+	
+		
+	<!--获得本项目分类的项目模板字段列表-->
+		<Step ID="QueryListStep"
+		alias="querywidget" 
+		hql="from SuncmProcatePageset ps where ps.suncmProjectCate.projectCateId=${pCateId}" 
+		IJump0="TranJournalStep" IJump-1="TranJournalStep" />
+	<!-- 记录日志，所有交易不管成功失败都需要记录日志，session错误代码tranErrorCode不为0时跳转到错误页面 -->
+		<Step ID="TranJournalStep" IJump0="successpage" IJump1="errpage" />
+	<!-- 返回系统首页面 -->
+		<Step ID="ReplyPageStep" alias="successpage" IFW_Reply="admin/admin_pcate_pslist" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="error" IJump0="end"/>
+	
+	</Flow>
+
+</PCateTplManagerFlow>

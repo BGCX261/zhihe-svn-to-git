@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-2-12 22:14:30 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.suncm.pojo.SuncmConUser" table="suncm_con_user" catalog="suncm">
+        <composite-id name="id" class="com.suncm.pojo.SuncmConUserId">
+            <key-property name="conId" type="string">
+                <column name="CON_ID" length="32" />
+            </key-property>
+            <key-property name="userId" type="string">
+                <column name="USER_ID" length="100" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="suncmConInfo" class="com.suncm.pojo.SuncmConInfo" update="false" insert="false" fetch="select">
+            <column name="CON_ID" length="32" not-null="true" />
+        </many-to-one>
+        <property name="canvote" type="string">
+            <column name="CANVOTE" length="1" not-null="true" />
+        </property>
+        <property name="forext1" type="string">
+            <column name="FOREXT1" length="20" />
+        </property>
+        <property name="forext2" type="string">
+            <column name="FOREXT2" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

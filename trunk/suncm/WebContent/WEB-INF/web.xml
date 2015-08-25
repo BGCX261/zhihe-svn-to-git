@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+<display-name>suncm</display-name>
+    <filter>
+  <filter-name>ChineseFilter</filter-name>
+  <filter-class>com.suncm.filter.ChineseFilter</filter-class>
+	<init-param>
+    <param-name>encoding</param-name>
+    <param-value>GBK</param-value>
+	</init-param>
+  </filter>
+  
+     <filter-mapping>
+    <filter-name>ChineseFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  
+       <filter-mapping>
+    <filter-name>ChineseFilter</filter-name>
+    <url-pattern>*.Web20</url-pattern>
+  </filter-mapping>
+  <servlet>
+  		<description>spring ext</description>
+  		<display-name>spring ext</display-name>
+  		<servlet-name>dispatcherServlet</servlet-name>
+  		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	<init-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>/WEB-INF/dispatcherServlet-servlet.xml</param-value>
+  	</init-param>
+  		<load-on-startup>1</load-on-startup>
+  </servlet>
+    <servlet>
+		<display-name>Web20Servlet</display-name>
+		<servlet-name>Web20Servlet</servlet-name>
+		<servlet-class>com.spring.action.Web20Servlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>InitJbpmUserServlet</display-name>
+  	<servlet-name>InitJbpmUserServlet</servlet-name>
+  	<servlet-class>
+  	com.suncm.util.InitJbpmUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>dispatcherServlet</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+      <servlet-mapping>
+	    <servlet-name>Web20Servlet</servlet-name>
+	    <url-pattern>/Web20</url-pattern>
+	</servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>InitJbpmUserServlet</servlet-name>
+  	<url-pattern>/InitJbpmUserServlet</url-pattern>
+  </servlet-mapping>
+	<display-name>
+	suncm</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+			<jsp-config>
+		<taglib>
+			<taglib-uri>/WEB-INF/suncm.tld</taglib-uri>
+			<taglib-location>/WEB-INF/suncm.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+	
+</web-app>

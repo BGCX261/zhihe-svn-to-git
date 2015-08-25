@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GB2312"?>
+<RmCreateRoleFlow>
+
+	<Flow>
+	<!-- 根据页面上送值创建一个角色 -->
+		<Step ID="RmCreateRoleStep" IJump0="succpage" IJump1="errpage"/>
+	<!-- 返回成功页面 -->
+		<Step ID="ReplyPageStep" alias="succpage" IFW_Reply="rm/rm_createrole_succ" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="rm/rm_role_error" IJump0="end"/>
+	
+	</Flow>
+
+</RmCreateRoleFlow>

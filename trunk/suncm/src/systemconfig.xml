@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<settings>
+		<param name="numPerPage" value="10"/>
+		<!-- 数据库日志，0关闭 1打开 -->
+		<param name="okdblog" value="1"/>
+		<param name="errordblog" value="1"/>
+		<!-- 保存解析文件请求过程中的临时文件,.开头表示相对路径 -->
+		<param name="fileUploadTmpPath" value="./tmpfile"/>
+		<!-- 保存客户端上传的文件 -->
+		<param name="fileUploadPath" value="./fileupload"/>
+		<param name="fileUploadMaxSize" value="4096000"/><!--字节为单位-->
+		<param name="fileUploadThreshold" value="40960"/><!--字节为单位-->
+		<param name="delim" value="|"/><!--系统常用分隔符-->
+	</settings>
+	<errorcodes>
+		<errorcode id="C000001" disMsg="翻页数据有误，请重新选择查询条件后进行查询"/>
+		<errorcode id="C000002" disMsg="系统错误，请稍后再试"/>
+		<errorcode id="C000003" disMsg="记录日志出错，请联系系统管理员"/>
+		<errorcode id="C000004" disMsg="工作流文件类型错误，必须为xml或bar文件"/>
+		<errorcode id="C000006" disMsg="用户不存在"/>
+		<errorcode id="C000007" disMsg="密码错误"/>
+	</errorcodes>
+</config>

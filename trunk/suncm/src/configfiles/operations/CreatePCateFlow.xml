@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GB2312"?>
+<CreatePCateFlow>
+
+	<Flow>
+
+
+	<!-- 保存项目分类信息，部署工作流 -->
+		<Step ID="AddPCateStep" IJump0="TranJournalStep" IJump-1="TranJournalStep" />
+	<!-- 记录日志，所有交易不管成功失败都需要记录日志，session错误代码tranErrorCode不为0时跳转到错误页面 -->
+		<Step ID="TranJournalStep" IJump0="successpage" IJump1="errpage" />
+	<!-- 返回系统首页面 -->
+		<Step ID="ReplyPageStep" alias="successpage" IFW_Reply="admin/admin_cpcate_succ" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="error" IJump0="end"/>
+	
+	</Flow>
+
+</CreatePCateFlow>

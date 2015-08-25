@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="GB2312"?>
+<security_attr_map>
+	<!--user extend attr list-->
+	<attr name="modify_date" type="date" desc="修改时间" idname="USER_ID" table="user_extend_info" column="modify_date"/>
+	<attr name="login_count" type="long" dataLen="10" desc="登录次数" idname="USER_ID" table="user_extend_info" column="login_count"/>
+	<attr name="sex" type="string" dataLen="20" desc="性别" idname="USER_ID" table="user_extend_info" column="sex"/>
+	<attr name="birthday" type="date" desc="生日" idname="USER_ID" table="user_extend_info" column="birthday"/>
+	<attr name="race" type="string" dataLen="20" desc="民族" idname="USER_ID" table="user_extend_info" column="race"/>
+	<attr name="phone" type="string" dataLen="20" desc="电话" idname="USER_ID" table="user_extend_info" column="phone"/>
+	<attr name="mobile" type="string" dataLen="20" desc="手机" idname="USER_ID" table="user_extend_info" column="mobile"/>
+	<attr name="address" type="string" dataLen="100" desc="地址" idname="USER_ID" table="user_extend_info" column="address"/>
+	<attr name="postal_code" type="string" dataLen="6" desc="邮编" idname="USER_ID" table="user_extend_info" column="postal_code"/>
+	<attr name="fax" type="string" dataLen="20" desc="传真" idname="USER_ID" table="user_extend_info" column="fax"/>
+	<attr name="province" type="string" dataLen="50" desc="省份" idname="USER_ID" table="user_extend_info" column="province"/>
+	<attr name="city" type="string" dataLen="50" desc="城市" idname="USER_ID" table="user_extend_info" column="city"/>
+	<attr name="card_type" type="string" dataLen="20" desc="证件类型" idname="USER_ID" table="user_extend_info" column="card_type"/>
+	<attr name="card_num" type="string" dataLen="20" desc="证件号码" idname="USER_ID" table="user_extend_info" column="card_num"/>
+	<attr name="degree" type="string" dataLen="20" desc="学历" idname="USER_ID" table="user_extend_info" column="degree"/>
+	<attr name="vocation_type" type="string" dataLen="20" desc="职业类别" idname="USER_ID" table="user_extend_info" column="vocation_type"/>
+	<attr name="job" type="string" dataLen="20" desc="工作" idname="USER_ID" table="user_extend_info" column="job"/>
+	<attr name="interesting" type="string" dataLen="20" desc="兴趣爱好" idname="USER_ID" table="user_extend_info" column="interesting"/>
+	<attr name="level_grade" type="string" dataLen="50" desc="职称" idname="USER_ID" table="user_extend_info" column="level_grade"/>
+	<attr name="description" type="string" dataLen="200" desc="描述" idname="USER_ID" table="user_extend_info" column="description"/>
+	<attr name="open_info" type="string" dataLen="100" desc="公开信息" idname="USER_ID" table="user_extend_info" column="open_info"/>
+	<attr name="type" type="string" dataLen="20" desc="类型" idname="USER_ID" table="user_extend_info" column="type"/>
+	<attr name="website" type="string" dataLen="20" desc="所在网站" idname="USER_ID" table="user_extend_info" column="website"/>
+</security_attr_map>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-2-12 22:14:30 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.suncm.pojo.SuncmVoteMethods" table="suncm_vote_methods" catalog="suncm">
+        <id name="vmid" type="string">
+            <column name="VMID" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="vmname" type="string">
+            <column name="VMNAME" length="56" not-null="true" />
+        </property>
+        <property name="isrdname" type="string">
+            <column name="ISRDNAME" length="1" />
+        </property>
+        <property name="vipreject" type="string">
+            <column name="VIPREJECT" length="1000" />
+        </property>
+        <property name="remark" type="string">
+            <column name="REMARK" length="256" />
+        </property>
+        <property name="formula" type="string">
+            <column name="FORMULA" length="256" />
+        </property>
+        <property name="forext1" type="string">
+            <column name="FOREXT1" length="20" />
+        </property>
+        <property name="forext2" type="string">
+            <column name="FOREXT2" length="100" />
+        </property>
+        <set name="suncmConCates" inverse="true" lazy="true" table="suncm_con_cate" fetch="select">
+            <key>
+                <column name="VM_ID" length="32" not-null="true" />
+            </key>
+            <one-to-many class="com.suncm.pojo.SuncmConCate" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<RemPrepareResInfoFlow>
+
+	<Flow>
+	<!-- 根据资源id查询资源基本信息 -->
+		<Step ID="RemQueryResBaseInfoStep" IJump0="keyinfo" IJump1="errpage" />
+	<!-- 查询资源对应的所有资源键值，一般的来说资源键是指URL，后续可扩展为数据库表明，字段名等 -->
+		<Step ID="RemQueryResKeyInfoStep" alias="keyinfo" IJump0="successpage" IJump1="errpage" />
+	<!-- 返回详细信息页面 -->
+		<Step ID="ReplyPageStep" alias="successpage" IFW_Reply="rem/rem_res_detail" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="rem/rem_resdetail_error" IJump0="end"/>
+	
+	</Flow>
+
+</RemPrepareResInfoFlow>

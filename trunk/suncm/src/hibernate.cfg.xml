@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="myfactory">
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">02270610</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/suncm</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+                 <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+               <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+             <!-- property name="hibernate.hbm2ddl.auto">create-drop</property>
+     <property name="hibernate.format_sql">true</property-->
+        
+        
+     <mapping resource="jbpm.repository.hbm.xml" />
+     <mapping resource="jbpm.execution.hbm.xml" />
+     <mapping resource="jbpm.history.hbm.xml" />
+     <mapping resource="jbpm.task.hbm.xml" />
+     <mapping resource="jbpm.identity.hbm.xml" />
+        
+        
+        <mapping resource="com/suncm/pojo/SuncmConCate.hbm.xml" />
+        <mapping resource="com/suncm/pojo/SuncmConInfo.hbm.xml" />
+        <mapping resource="com/suncm/pojo/SuncmConProject.hbm.xml" />
+        <mapping resource="com/suncm/pojo/SuncmConUser.hbm.xml" />
+        <mapping resource="com/suncm/pojo/SuncmConVote.hbm.xml" />
+        <mapping resource="com/suncm/pojo/SuncmErrorJournal.hbm.xml" />
+        <mapping resource="com/suncm/pojo/SuncmJournal.hbm.xml" />
+        <mapping resource="com/suncm/pojo/SuncmMyGroup.hbm.xml" />
+        <mapping resource="com/suncm/pojo/SuncmProcatePageset.hbm.xml" />
+        <mapping resource="com/suncm/pojo/SuncmProjectCate.hbm.xml" />
+        <mapping resource="com/suncm/pojo/SuncmProjectExt.hbm.xml" />
+        <mapping resource="com/suncm/pojo/SuncmProjectInfo.hbm.xml" />
+        <mapping resource="com/suncm/pojo/SuncmSystemParam.hbm.xml" />
+        <mapping resource="com/suncm/pojo/SuncmVoteMethods.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

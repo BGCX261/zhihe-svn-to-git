@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-2-12 22:14:30 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.suncm.pojo.SuncmSystemParam" table="suncm_system_param" catalog="suncm">
+        <id name="paramname" type="string">
+            <column name="PARAMNAME" length="56" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="paramvalue" type="string">
+            <column name="PARAMVALUE" length="256" />
+        </property>
+        <property name="modifier" type="string">
+            <column name="MODIFIER" length="100" />
+        </property>
+        <property name="modifytime" type="string">
+            <column name="MODIFYTIME" length="14" />
+        </property>
+    </class>
+</hibernate-mapping>

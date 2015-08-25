@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-2-12 22:14:30 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.suncm.pojo.SuncmProjectInfo" table="suncm_project_info" catalog="suncm">
+        <id name="projectId" type="string">
+            <column name="PROJECT_ID" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <many-to-one name="suncmProjectCate" class="com.suncm.pojo.SuncmProjectCate" fetch="select">
+            <column name="PROJECT_CATE_ID" length="32" not-null="true" />
+        </many-to-one>
+        <property name="projectName" type="string">
+            <column name="PROJECT_NAME" length="56" />
+        </property>
+        <property name="projectStatus" type="int">
+            <column name="PROJECT_STATUS" not-null="true" />
+        </property>
+        <property name="isdelete" type="int">
+            <column name="ISDELETE" not-null="true" />
+        </property>
+        <property name="createdate" type="string">
+            <column name="CREATEDATE" length="14" />
+        </property>
+        <property name="auditdate" type="string">
+            <column name="AUDITDATE" length="14" />
+        </property>
+        <property name="createUser" type="string">
+            <column name="CREATE_USER" length="100" />
+        </property>
+        <property name="createDep" type="string">
+            <column name="CREATE_DEP" length="100" />
+        </property>
+        <property name="forext1" type="string">
+            <column name="FOREXT1" length="20" />
+        </property>
+        <property name="forext2" type="string">
+            <column name="FOREXT2" length="100" />
+        </property>
+        <property name="projectFinal" type="string">
+            <column name="PROJECT_FINAL" length="1" />
+        </property>
+        <property name="executionId" type="string">
+            <column name="EXECUTION_ID" length="20" />
+        </property>
+        <set name="suncmConProjects" inverse="true" lazy="true" table="suncm_con_project" fetch="select">
+            <key>
+                <column name="PROJECT_ID" length="32" not-null="true" />
+            </key>
+            <one-to-many class="com.suncm.pojo.SuncmConProject" />
+        </set>
+        <set name="suncmProjectExts" inverse="true" lazy="true" table="suncm_project_ext" fetch="select">
+            <key>
+                <column name="PROJECT_ID" length="32" not-null="true" />
+            </key>
+            <one-to-many class="com.suncm.pojo.SuncmProjectExt" />
+        </set>
+    </class>
+</hibernate-mapping>

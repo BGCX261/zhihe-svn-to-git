@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="gb2312" standalone="yes" ?> 
+<security>
+	<!-- 实现类 -->
+    <implementer class="com.css.security.db.DBSecurityManager" />
+    
+	<!-- 加密器 -->
+    <encrypter class="com.css.security.db.user.PasswordEncrypter" />
+
+	<!-- 校验器 -->
+    <validator class="com.css.security.db.user.BasicValidator" />
+    
+  <!-- 是否支持动态角色 -->
+    <dynamic_role_flag value="false" />
+
+	<!-- 基本规则 -->
+    <basicrule pwdMinLen="1" pwdMaxLen="30" chineseUserName="true"
+        nameMinLen="1" nameMaxLen="30" needNameDifPassword="false"/>
+    
+    <!-- 不需要判断的文件扩展名称 -->
+    <extend_names value="*.js,*.css,*.gif,*.jpg,*.png" />
+    
+    <!-- 登录页面文件名称 返回session超时页面，由用户自行跳转至登录页面-->
+    <login_page value="ifwum_sessionerror.jsp" />
+    
+    <!-- 消息提示页面名称 可做成一个特殊的登录页面-->
+    <message_page value="ifwum_filterlogin.jsp" />
+    
+    <!-- 不需要判断的特殊文件名称 -->
+    <!--page_list value="/common/jsp/index.jsp,/build.jsp,/normal/jsp/user/UserLoginForm.jsp,/normal/Logout.jsp,/normal/index.jsp,/normal/jsp/user/ShowMessage.jsp,/normal/jsp/share/top.jsp,/normal/jsp/share/left.jsp,/normal/jsp/share/Bottom.jsp,/normal/jsp/share/switch.jsp" /-->
+    
+    
+    <!-- 不需要过滤的特殊文件名称 -->
+    <ignore_pagelist>
+    	<!--page value="/common/jsp/index.jsp"/>
+    	<page value="/common/jsp/Top.jsp"/>
+    	<page value="/common/jsp/Left.jsp"/>
+    	<page value="/common/jsp/changewin.htm"/>
+    	<page value="/common/jsp/center.jsp"/>
+    	<page value="/common/jsp/Bottom.jsp"/>
+    	<page value="/common/jsp/common.jsp"/>
+    	<page value="/common/jsp/NotFound.jsp"/>
+    	<page value="/common/jsp/JumpWithMessage.jsp"/>
+    	<page value="/build.jsp"/>
+    	<page value="/normal/index.jsp"/>
+    	<page value="/normal/jsp/user/UserLoginForm.jsp"/>
+    	<page value="/normal/Logout.jsp"/>
+    	<page value="/normal/jsp/user/ShowMessage.jsp"/>
+    	<page value="/normal/jsp/share/top.jsp"/>
+    	<page value="/normal/jsp/share/left.jsp"/>
+    	<page value="/normal/jsp/share/Bottom.jsp"/>
+    	<page value="/normal/jsp/share/switch.jsp"/-->
+    	<page value="ifwum_logonerror.jsp"/>
+    	<page value="ifwum_filterlogin.jsp"/>
+    	<page value="LogoffFlow"/>
+    	<page value="LogonFlow"/>
+    	<page value="logon.jsp"/>
+    	<page value="ifwum_sessionerror.jsp"/>
+		<page value="/login/relogin.html"/>
+    </ignore_pagelist>
+</security>

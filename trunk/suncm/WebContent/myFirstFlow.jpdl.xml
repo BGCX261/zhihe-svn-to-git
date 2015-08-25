@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="myFirstFlow" xmlns="http://jbpm.org/4.0/jpdl">
+   <start g="180,5,48,48" name="tset">
+      <transition name="提交" to="报送" g="-50,-21"/>
+   </start>
+   <task name="秘书审批" g="154,182,92,52">
+      <transition name="通过" to="上会" g="-50,-21"/>
+      <transition name="不通过，需要修改" to="报送" g="244,163:-50,-21"/>
+   </task>
+   <task name="上会" g="157,274,92,52">
+      <transition name="拒绝" to="end1" g="303,340:-48,-21"/>
+      <transition name="通过" to="总裁审批" g="-80,-21"/>
+   </task>
+   <task name="总裁审批" g="158,373,92,52">
+      <transition name="通过" to="end1" g="-48,-21"/>
+   </task>
+   <end name="end1" g="182,479,48,48"/>
+   <task name="报送" g="157,81,92,52">
+      <transition name="报送" to="秘书审批" g="165,156:-80,-21"/>
+   </task>
+</process>

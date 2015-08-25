@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<QueryDptRootFlow>
+
+	<Flow>
+	<!-- 查询深度是1的机构根节点是否存在，如果不存在需要录入，如果存在则直接进入树维护页面 -->
+		<Step ID="IfExistRootStep" IJump0="addrootpage" IJump1="treepage" IJump2="errpage"/>
+	<!-- 返回录入根节点页面 -->
+		<Step ID="ReplyPageStep" alias="addrootpage" IFW_Reply="dm/dm_create_root" IJump0="end"/>
+	<!-- 返回树页面 -->
+		<Step ID="ReplyPageStep" alias="treepage" IFW_Reply="dm/dm_dpttree_index" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="dm/dm_dpt_error" IJump0="end"/>
+	
+	</Flow>
+
+</QueryDptRootFlow>

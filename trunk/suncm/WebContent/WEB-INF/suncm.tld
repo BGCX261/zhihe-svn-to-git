@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+	<tlibversion>1.1</tlibversion>
+	<jspversion>1.2</jspversion>
+	<shortname>icbc</shortname>
+	<uri>/WEB-INF/suncm.tld</uri>
+	<info>Suncm - (C) Copyright ZhiHe Corp. 2010</info>
+	<tag>
+		<name>widget</name>
+		<tagclass>com.suncm.page.widget.WidgetGenerateTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>for generate project widget code</info>
+	
+	</tag>
+	</taglib>

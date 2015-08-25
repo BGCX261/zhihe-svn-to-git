@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-2-12 22:14:30 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.suncm.pojo.SuncmProjectCate" table="suncm_project_cate" catalog="suncm">
+        <id name="projectCateId" type="string">
+            <column name="PROJECT_CATE_ID" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="projectCateName" type="string">
+            <column name="PROJECT_CATE_NAME" length="56" not-null="true" />
+        </property>
+        <property name="wflid" type="string">
+            <column name="WFLID" length="256" />
+        </property>
+        <property name="wflname" type="string">
+            <column name="WFLNAME" length="256" />
+        </property>
+        <property name="projectCateStat" type="int">
+            <column name="PROJECT_CATE_STAT" not-null="true" />
+        </property>
+        <property name="forext1" type="string">
+            <column name="FOREXT1" length="20" />
+        </property>
+        <property name="forext2" type="string">
+            <column name="FOREXT2" length="100" />
+        </property>
+        <set name="suncmProjectInfos" inverse="true" lazy="true" table="suncm_project_info" fetch="select">
+            <key>
+                <column name="PROJECT_CATE_ID" length="32" not-null="true" />
+            </key>
+            <one-to-many class="com.suncm.pojo.SuncmProjectInfo" />
+        </set>
+        <set name="suncmProcatePagesets" inverse="true" lazy="true" table="suncm_procate_pageset" fetch="select">
+            <key>
+                <column name="PROJECT_CATE_ID" length="32" not-null="true" />
+            </key>
+            <one-to-many class="com.suncm.pojo.SuncmProcatePageset" />
+        </set>
+    </class>
+</hibernate-mapping>

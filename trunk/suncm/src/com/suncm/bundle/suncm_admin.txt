@@ -1,0 +1,9 @@
+suncm.admin.projcatestatus_0=正常
+suncm.admin.projcatestatus_1=已冻结
+suncm.admin.projcatestatus_2=已删除
+suncm.admin.pagesettype_0=普通文本框
+suncm.admin.pagesettype_1=普通下拉框
+suncm.admin.pagesettype_2=日期选择框
+suncm.admin.pagesettype_3=文件选择框
+suncm.admin.switch_0=否
+suncm.admin.switch_1=是

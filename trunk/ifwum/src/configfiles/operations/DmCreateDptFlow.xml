@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312"?>
+<DmCreateDptFlow>
+
+	<Flow>
+	<!-- 创建根机构 -->
+		<Step ID="CreateDptStep" IJump0="successpage" IJump1="errpage" />
+	<!-- 返回系统首页面 -->
+		<Step ID="ReplyPageStep" alias="successpage" IFW_Reply="dm/dm_dpttree_index" IJump0="end"/>
+		<Step ID="ReplyPageStep" alias="successpage" IFW_Reply="dm/dm_dd_addcldsucc" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="dm/dm_dpt_error" IJump0="end"/>
+	
+	</Flow>
+
+</DmCreateDptFlow>

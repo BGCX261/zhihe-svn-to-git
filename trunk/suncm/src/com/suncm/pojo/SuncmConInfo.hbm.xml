@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-2-12 22:14:30 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.suncm.pojo.SuncmConInfo" table="suncm_con_info" catalog="suncm">
+        <id name="conId" type="string">
+            <column name="CON_ID" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <many-to-one name="suncmConCate" class="com.suncm.pojo.SuncmConCate" fetch="select">
+            <column name="CON_CATEGORY_ID" length="32" not-null="true" />
+        </many-to-one>
+        <property name="conNo" type="string">
+            <column name="CON_NO" length="10" not-null="true" />
+        </property>
+        <property name="conName" type="string">
+            <column name="CON_NAME" length="200" not-null="true" />
+        </property>
+        <property name="directer" type="string">
+            <column name="DIRECTER" length="100" />
+        </property>
+        <property name="confduetime" type="string">
+            <column name="CONFDUETIME" length="12">
+                <comment>yyyyMMddhhmm</comment>
+            </column>
+        </property>
+        <property name="confaddr" type="string">
+            <column name="CONFADDR" length="128" />
+        </property>
+        <property name="conftitle" type="string">
+            <column name="CONFTITLE" length="128" />
+        </property>
+        <property name="confcreatetime" type="string">
+            <column name="CONFCREATETIME" length="14">
+                <comment>YyyyMMddhhmmss</comment>
+            </column>
+        </property>
+        <property name="confcreator" type="string">
+            <column name="CONFCREATOR" length="100" />
+        </property>
+        <property name="confsum" type="string">
+            <column name="CONFSUM" length="256">
+                <comment>A FILE NAME OF CONFERENCE SUMMERY FILE</comment>
+            </column>
+        </property>
+        <property name="confnow" type="string">
+            <column name="CONFNOW" length="1" not-null="true" />
+        </property>
+        <property name="forext1" type="string">
+            <column name="FOREXT1" length="20" />
+        </property>
+        <property name="forext2" type="string">
+            <column name="FOREXT2" length="100" />
+        </property>
+        <set name="suncmConProjects" inverse="true" lazy="true" table="suncm_con_project" fetch="select">
+            <key>
+                <column name="CON_ID" length="32" not-null="true" />
+            </key>
+            <one-to-many class="com.suncm.pojo.SuncmConProject" />
+        </set>
+        <set name="suncmConUsers" inverse="true" lazy="true" table="suncm_con_user" fetch="select">
+            <key>
+                <column name="CON_ID" length="32" not-null="true" />
+            </key>
+            <one-to-many class="com.suncm.pojo.SuncmConUser" />
+        </set>
+    </class>
+</hibernate-mapping>

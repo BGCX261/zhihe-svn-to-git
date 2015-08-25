@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//spring//DTD BEAN/EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean id="UserLogonStep" class="com.ifwum.step.UserLogonStep"></bean>
+	<bean id="UserLogoffStep" class="com.ifwum.step.UserLogoffStep"></bean>		
+	<bean id="SwitchStep" class="com.ifwum.step.SwitchStep"></bean>
+	<bean id="ReplyPageStep" class="com.ifwum.step.ReplyPageStep"></bean>
+	
+	<bean id="GetPageStep" class="com.ifwum.step.GetPageStep"></bean>
+	<bean id="CreateUserStep" class="com.ifwum.step.CreateUserStep"></bean>
+	<bean id="QueryUserListStep" class="com.ifwum.step.QueryUserListStep"></bean>
+	<bean id="DeleteUserStep" class="com.ifwum.step.DeleteUserStep"></bean>
+	<bean id="CreateDptStep" class="com.ifwum.step.CreateDptStep"></bean>
+	<bean id="IfExistRootStep" class="com.ifwum.step.IfExistRootStep"></bean>
+	<bean id="PmCreatePosStep" class="com.ifwum.step.PmCreatePosStep"></bean>
+	<bean id="PmQueryPosListStep" class="com.ifwum.step.PmQueryPosListStep"></bean>
+	<bean id="PmQuerySinglePosStep" class="com.ifwum.step.PmQuerySinglePosStep"></bean>
+	<bean id="PmModifyPosStep" class="com.ifwum.step.PmModifyPosStep"></bean>
+	<bean id="PmDeletePosStep" class="com.ifwum.step.PmDeletePosStep"></bean>
+	<bean id="DmQueryDptBaseInfoStep" class="com.ifwum.step.DmQueryDptBaseInfoStep"></bean>
+	<bean id="DmQueryDptPosInfoStep" class="com.ifwum.step.DmQueryDptPosInfoStep"></bean>
+	<bean id="DmQueryDptUserInfoStep" class="com.ifwum.step.DmQueryDptUserInfoStep"></bean>
+	<bean id="DmQueryDptPriInfoStep" class="com.ifwum.step.DmQueryDptPriInfoStep"></bean>
+	<bean id="DmCheckDptCodeStep" class="com.ifwum.step.DmCheckDptCodeStep"></bean>
+	<bean id="RmCreateRoleStep" class="com.ifwum.step.RmCreateRoleStep"></bean>
+	<bean id="RmQueryRoleListStep" class="com.ifwum.step.RmQueryRoleListStep"></bean>
+	<bean id="RmDeleteRoleStep" class="com.ifwum.step.RmDeleteRoleStep"></bean>
+	<bean id="RmModifyRoleStep" class="com.ifwum.step.RmModifyRoleStep"></bean>
+	<bean id="RmQuerySingleRoleStep" class="com.ifwum.step.RmQuerySingleRoleStep"></bean>
+	<bean id="DmAddPosToDptStep" class="com.ifwum.step.DmAddPosToDptStep"></bean>
+	<bean id="DmDelPosFromDptStep" class="com.ifwum.step.DmDelPosFromDptStep"></bean>
+	<bean id="DmDelDptStep" class="com.ifwum.step.DmDelDptStep"></bean>
+	<bean id="DmAddUserToDptStep" class="com.ifwum.step.DmAddUserToDptStep"></bean>
+	<bean id="DmDelUserFromDptStep" class="com.ifwum.step.DmDelUserFromDptStep"></bean>
+	<bean id="RemCreateResStep" class="com.ifwum.step.RemCreateResStep"></bean>
+	<bean id="RemQueryResBaseInfoStep" class="com.ifwum.step.RemQueryResBaseInfoStep"></bean>
+	<bean id="RemQueryResKeyInfoStep" class="com.ifwum.step.RemQueryResKeyInfoStep"></bean>
+	<bean id="RemAddUrlToResStep" class="com.ifwum.step.RemAddUrlToResStep"></bean>
+	<bean id="RemDelResStep" class="com.ifwum.step.RemDelResStep"></bean>
+	<bean id="RemDelUrlFromResStep" class="com.ifwum.step.RemDelUrlFromResStep"></bean>
+	<bean id="RmQueryRoleBaseInfoStep" class="com.ifwum.step.RmQueryRoleBaseInfoStep"></bean>
+	<bean id="RmQueryRoleResInfoStep" class="com.ifwum.step.RmQueryRoleResInfoStep"></bean>
+	<bean id="RmDelUserFromRoleStep" class="com.ifwum.step.RmDelUserFromRoleStep"></bean>
+	<bean id="RmAddUserToRoleStep" class="com.ifwum.step.RmAddUserToRoleStep"></bean>
+	<bean id="RmDelResFromRoleStep" class="com.ifwum.step.RmDelResFromRoleStep"></bean>
+	<bean id="RmAddResToRoleStep" class="com.ifwum.step.RmAddResToRoleStep"></bean>
+	
+</beans>

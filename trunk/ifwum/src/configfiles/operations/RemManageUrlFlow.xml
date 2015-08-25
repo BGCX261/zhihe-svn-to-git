@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<RemManageUrlFlow>
+
+	<Flow>
+	<Step ID="SwitchStep" alias="switch" switchSource="flag" 
+	IJump0="addurl"
+	IJump1="delurl"/>
+	<!-- 向某个资源添加url -->	
+		<Step ID="RemAddUrlToResStep" alias="addurl" IJump0="end"/>
+	<!-- 从某个资源除去url -->
+		<Step ID="RemDelUrlFromResStep" alias="delurl" IJump0="end"/>
+	
+	
+	</Flow>
+
+</RemManageUrlFlow>

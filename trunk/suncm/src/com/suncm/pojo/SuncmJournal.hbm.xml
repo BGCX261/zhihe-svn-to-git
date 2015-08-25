@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-2-12 22:14:30 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.suncm.pojo.SuncmJournal" table="suncm_journal" catalog="suncm">
+        <id name="seqno" type="string">
+            <column name="SEQNO" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="actionname" type="string">
+            <column name="ACTIONNAME" length="56" />
+        </property>
+        <property name="actor" type="string">
+            <column name="ACTOR" length="100" />
+        </property>
+        <property name="actime" type="string">
+            <column name="ACTIME" length="14" />
+        </property>
+        <property name="actdesc" type="string">
+            <column name="ACTDESC" length="1000" />
+        </property>
+    </class>
+</hibernate-mapping>

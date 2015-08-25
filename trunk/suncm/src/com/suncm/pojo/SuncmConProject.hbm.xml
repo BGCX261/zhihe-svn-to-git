@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-2-12 22:14:30 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.suncm.pojo.SuncmConProject" table="suncm_con_project" catalog="suncm">
+        <composite-id name="id" class="com.suncm.pojo.SuncmConProjectId">
+            <key-property name="projectId" type="string">
+                <column name="PROJECT_ID" length="32" />
+            </key-property>
+            <key-property name="conId" type="string">
+                <column name="CON_ID" length="32" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="suncmConInfo" class="com.suncm.pojo.SuncmConInfo" update="false" insert="false" fetch="select">
+            <column name="CON_ID" length="32" not-null="true" />
+        </many-to-one>
+        <many-to-one name="suncmProjectInfo" class="com.suncm.pojo.SuncmProjectInfo" update="false" insert="false" fetch="select">
+            <column name="PROJECT_ID" length="32" not-null="true" />
+        </many-to-one>
+        <property name="seqNo" type="int">
+            <column name="SEQ_NO" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

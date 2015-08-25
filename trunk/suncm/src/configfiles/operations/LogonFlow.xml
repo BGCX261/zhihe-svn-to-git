@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<LogonFlow>
+
+	<Flow>
+	<!-- 验证用户是否有效 -->
+		<Step ID="UserLogonStep" IJump0="TranJournalStep" IJump1="TranJournalStep" />
+	<!-- 记录日志，所有交易不管成功失败都需要记录日志，session错误代码tranErrorCode不为0时跳转到错误页面 -->
+		<Step ID="TranJournalStep" IJump0="successpage" IJump1="errpage" />
+	<!-- 返回系统首页面 -->
+		<Step ID="ReplyPageStep" alias="successpage" IFW_Reply="index" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="suncm_logonerror" IJump0="end"/>
+	
+	</Flow>
+
+</LogonFlow>

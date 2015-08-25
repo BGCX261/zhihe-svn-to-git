@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>ium taglib</short-name>
+	<description>
+     ium taglib,include some useful tag that is not in jstl
+  </description>
+	<tag>
+		<name>tree</name>
+		<tag-class>com.ifwum.taglib.TreeTag</tag-class>
+		<body-content>empty</body-content>
+		<description></description>
+		<attribute>
+			<name>provider</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>linkUrl</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+				<attribute>
+			<name>rootText</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>

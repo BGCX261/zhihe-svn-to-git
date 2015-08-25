@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<DmManageDptUserFlow>
+
+	<Flow>
+	<Step ID="SwitchStep" alias="switch" switchSource="flag" 
+	IJump0="addres" 
+	IJump1="delres"/>
+	<!-- 向某个部门添加用户 -->	
+		<Step ID="RmAddResToRoleStep" alias="addres" IJump0="end"/>
+		
+		<Step ID="RmDelResFromRoleStep" alias="delres" IJump0="end"/>
+	
+	
+	</Flow>
+
+</DmManageDptUserFlow>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-2-12 22:14:30 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.suncm.pojo.SuncmConVote" table="suncm_con_vote" catalog="suncm">
+        <composite-id name="id" class="com.suncm.pojo.SuncmConVoteId">
+            <key-property name="conId" type="string">
+                <column name="CON_ID" length="32" />
+            </key-property>
+            <key-property name="userId" type="string">
+                <column name="USER_ID" length="100" />
+            </key-property>
+            <key-property name="projectId" type="string">
+                <column name="PROJECT_ID" length="32" />
+            </key-property>
+        </composite-id>
+        <property name="voteIdea" type="string">
+            <column name="VOTE_IDEA" length="256" />
+        </property>
+        <property name="voteType" type="string">
+            <column name="VOTE_TYPE" length="1" />
+        </property>
+        <property name="voteTime" type="string">
+            <column name="VOTE_TIME" length="14" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

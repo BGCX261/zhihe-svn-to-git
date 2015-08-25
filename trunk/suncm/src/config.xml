@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//spring//DTD BEAN/EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean id="UserLogonStep" class="com.suncm.step.common.UserLogonStep"></bean>
+	<!-- bean id="UserLogonStep" class="com.suncm.step.common.DummyUserLogonStep"></bean-->
+	<!-- bean id="UserLogonStep" class="com.suncm.step.common.JbpmUserLogonStep"></bean-->
+	<bean id="ReplyPageStep" class="com.suncm.step.common.ReplyPageStep"></bean>
+	<bean id="SwitchStep" class="com.suncm.step.common.SwitchStep"></bean>
+	<bean id="SetPageControlStep" class="com.suncm.step.common.SetPageControlStep"></bean>
+	<bean id="TranJournalStep" class="com.suncm.step.common.TranJournalStep"></bean>
+	<bean id="QueryListStep" class="com.suncm.step.common.QueryListStep"></bean>
+	<bean id="DisplayPageStep" class="com.suncm.step.common.DisplayPageStep"></bean>
+	<bean id="AddPCateStep" class="com.suncm.step.admin.AddPCateStep"></bean>
+		<bean id="PCateGetWflPicStep" class="com.suncm.step.admin.PCateGetWflPicStep"></bean>
+		<bean id="AddProjectStep" class="com.suncm.step.project.AddProjectStep"></bean>
+		<bean id="GetTodoListStep" class="com.suncm.step.project.GetTodoListStep"></bean>
+		
+		<bean id="PCateAddWidgetToTplStep" class="com.suncm.step.admin.PCateAddWidgetToTplStep"></bean>
+		<bean id="PCateDelWidgetFromTplStep" class="com.suncm.step.admin.PCateDelWidgetFromTplStep"></bean>
+		<bean id="SaveDataStep" class="com.suncm.step.common.SaveDataStep"></bean>
+		<bean id="ProjectGetTodoDetailStep" class="com.suncm.step.project.ProjectGetTodoDetailStep"></bean>
+	
+	<!-- 用户系统适配对象 -->
+	<bean id="UserFacade" class="com.suncm.um.JbpmUserFacade"></bean>
+	<!-- 脚本生成器 -->
+	<bean id="WidgetFacade0" class="com.suncm.page.widget.PlainTextWidgetFacade"></bean>
+	<bean id="WidgetFacade1" class="com.suncm.page.widget.PlainComboWidgetFacade"></bean>
+	<bean id="WidgetFacade2" class="com.suncm.page.widget.DateInputWidgetFacade"></bean>
+	<bean id="WidgetFacade3" class="com.suncm.page.widget.FileWidgetFacade"></bean>
+
+	
+</beans>

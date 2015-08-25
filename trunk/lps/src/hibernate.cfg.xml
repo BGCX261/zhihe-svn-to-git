@@ -1,0 +1,29 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="show_sql">true</property>
+        <!-- property name="hibernate.connection.url">jdbc:mysql://83.252.30.176:3307/tcr</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">02270610</property-->
+        <property name="cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>
+        <property name="transaction.flush_before_completion">true</property>
+        <property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+        <!--<property name="hibernate.dialect">org.hibernate.dialect.MySQL5ExtendDialect</property>
+        -->
+        <property name="hibernate.dialect">org.lps.base.MySQL5ExtendDialect</property>
+        <!-- property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.provider_class">org.hibernate.connection.DriverManagerConnectionProvider</property-->
+        <property name="hibernate.connection.provider_class">org.hibernate.connection.ProxoolConnectionProvider</property>
+        <property name="hibernate.proxool.xml">proxool.xml</property>
+        <property name="hibernate.proxool.pool_alias">mysql</property>
+
+        <mapping class="org.lps.entity.OmEmployee" />
+     
+        
+        
+    </session-factory>
+    
+</hibernate-configuration>

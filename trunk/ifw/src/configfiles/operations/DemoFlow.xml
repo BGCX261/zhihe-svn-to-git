@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GB2312"?>
+<DemoFlow>
+
+	<Flow>
+	
+		<Step ID="SystemoutStep" IJump0="testalias"/>
+		
+		<Step ID="PrepareDataStep" alias="testalias" IJump0="resultpage"/>
+		
+		<Step ID="ReplyPageStep" alias="resultpage" IFW_Reply="/ifw.html" IJump0="end"/>
+	
+	</Flow>
+
+</DemoFlow>

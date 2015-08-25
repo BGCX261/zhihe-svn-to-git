@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="GB2312"?>
+<QueryProjectCateListFlow>
+
+	<Flow>
+	<!-- 如果第一次提交，则先执行查询，否则执行对翻页字段进行赋值  -->
+		<Step ID="SwitchStep" switchSource="pageActType" IJump0="QueryListStep" 
+		IJump1="SetPageControlStep" IJump2="SetPageControlStep" IJump3="SetPageControlStep" IJump4="SetPageControlStep" IJump-1="TranJournalStep"/>
+	<!-- 查询系统目前的项目分类列表 -->
+		<Step ID="QueryListStep" hql="from SuncmProjectCate where projectCateStat!=2" IJump0="SetPageControlStep" IJump-1="TranJournalStep" />
+	<!-- 设置翻页相关字段 -->
+		<Step ID="SetPageControlStep" IJump0="TranJournalStep" IJump-1="TranJournalStep" />
+	<!-- 记录日志，所有交易不管成功失败都需要记录日志，session错误代码tranErrorCode不为0时跳转到错误页面 -->
+		<Step ID="TranJournalStep" IJump0="successpage" IJump1="errpage" />
+	<!-- 返回系统首页面 -->
+		<Step ID="ReplyPageStep" alias="successpage" IFW_Reply="admin/admin_pcate_list" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="error" IJump0="end"/>
+	
+	</Flow>
+
+</QueryProjectCateListFlow>

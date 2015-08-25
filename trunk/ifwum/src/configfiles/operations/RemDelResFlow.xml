@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GB2312"?>
+<RemDelResFlow>
+
+	<Flow>
+	<!-- 删除一个资源 -->
+		<Step ID="RemDelResStep" IJump0="successpage" IJump1="errpage" />
+		<Step ID="ReplyPageStep" alias="successpage" IFW_Reply="rem/rem_delres_succ" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="rem/rem_res_error" IJump0="end"/>
+	
+	</Flow>
+
+</RemDelResFlow>

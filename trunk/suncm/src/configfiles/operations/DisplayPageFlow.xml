@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GB2312"?>
+<DisplayPageFlow>
+
+	<Flow>
+	<!-- 返回客户端指定的特定页面 -->
+		<Step ID="DisplayPageStep" alias="successpage" IJump0="end"/>
+	</Flow>
+
+</DisplayPageFlow>

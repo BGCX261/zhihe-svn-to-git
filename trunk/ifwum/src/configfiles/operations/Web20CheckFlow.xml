@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GB2312"?>
+<Web20CheckFlow>
+
+	<Flow>
+	<Step ID="SwitchStep" alias="switch" switchSource="flag" 
+	IJump0="checkdeptcode" 
+	IJump1="addpos"
+	IJump2="delpos"/>
+	<!-- 检查机构代码是否重复 -->
+		<Step ID="DmCheckDptCodeStep" alias="checkdeptcode" IJump0="end"/>
+	<!-- 向某个部门添加岗位 -->	
+		<Step ID="DmAddPosToDptStep" alias="addpos" IJump0="end"/>
+		
+		<Step ID="DmDelPosFromDptStep" alias="delpos" IJump0="end"/>
+	
+	
+	</Flow>
+
+</Web20CheckFlow>

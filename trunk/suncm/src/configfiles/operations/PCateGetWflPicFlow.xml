@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="GB2312"?>
+<PCateGetWflPicFlow>
+
+	<Flow>
+
+
+	<!-- 获得 -->
+		<Step ID="PCateGetWflPicStep" IJump0="TranJournalStep" IJump-1="TranJournalStep" />
+	
+	<!-- 记录日志，所有交易不管成功失败都需要记录日志，session错误代码tranErrorCode不为0时跳转到错误页面 -->
+		<Step ID="TranJournalStep" IJump0="switchstep" IJump1="errpage" />
+		
+				
+		<Step ID="SwitchStep" alias="switchstep" switchSource="pageActType" IJump0="todopicpage" 
+		IJump1="pcatepicpage" IJump-1="pcatepicpage"/>
+	<!-- 返回系统首页面 -->
+		<Step ID="ReplyPageStep" alias="pcatepicpage" IFW_Reply="admin/admin_pcate_pic" IJump0="end"/>
+		
+	<!-- 返回显示图片页面 -->
+		<Step ID="ReplyPageStep" alias="todopicpage" IFW_Reply="project/project_todo_wflpic" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="error" IJump0="end"/>
+	
+	</Flow>
+
+</PCateGetWflPicFlow>

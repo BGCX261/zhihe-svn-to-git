@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GB2312"?>
+<CreateProjectFlow>
+
+	<Flow>
+<!-- 区分各个提交页面  -->
+		<Step ID="SwitchStep" switchSource="pageActType" 
+		IJump0="querypcate"
+		IJump1="savepageonedata"
+		IJump2="saveprojectinfo"  
+		IJump-1="TranJournalStep"/>
+	<!-- 查询所有项目分类，在第一个页面显示 -->
+		<Step ID="QueryListStep" alias="querypcate" hql="from SuncmProjectCate  where projectCateStat=0" IJump0="firstpage" IJump-1="TranJournalStep" />
+	<!-- 保存第一个页面提交的各个字段 -->
+		<Step ID="SaveDataStep" 
+		datatosave="projectName|pCateId|pCateName"
+		alias="savepageonedata" IJump0="querypageset" IJump-1="TranJournalStep" />
+	<!-- 查询此项目分类对应的页面配置，在第二个页面显示 -->
+		<Step ID="QueryListStep" alias="querypageset"  
+		hql="from SuncmProcatePageset ps where ps.suncmProjectCate.projectCateId=${pCateId}" 
+		IJump0="secondpage" IJump-1="TranJournalStep" />
+	<!-- 最终提交上来，保存项目信息并启动工作流 -->
+		<Step ID="AddProjectStep" alias="saveprojectinfo" IJump0="TranJournalStep" IJump-1="TranJournalStep" />
+		
+	<!-- 记录日志，所有交易不管成功失败都需要记录日志，session错误代码tranErrorCode不为0时跳转到错误页面 -->
+		<Step ID="TranJournalStep" IJump0="successpage" IJump1="errpage" />
+	<!-- 返回系统首页面 -->
+		<Step ID="ReplyPageStep" alias="successpage" IFW_Reply="project/project_create_succ" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="error" IJump0="end"/>
+
+	<!-- 返回交易第一个页面，输入项目名，选择项目分类 -->
+		<Step ID="ReplyPageStep" alias="firstpage" IFW_Reply="project/project_create_input1" IJump0="end"/>
+	<!-- 返回交易第二个页面，输入项目分类要求的信息 -->	
+		<Step ID="ReplyPageStep" alias="secondpage" IFW_Reply="project/project_create_input2" IJump0="end"/>
+	
+	</Flow>
+
+</CreateProjectFlow>

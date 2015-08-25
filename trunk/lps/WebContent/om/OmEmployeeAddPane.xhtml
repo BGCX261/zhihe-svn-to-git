@@ -1,0 +1,440 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<rich:modalPanel 
+xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a4j="http://richfaces.org/a4j"
+id="addPanel" autosized="true" width="450" rendered="#{s:hasPermission('entity','OmEmployee:add')}" >
+		<f:facet name="header">
+			<h:outputText value="#{messages.common_add_instance}#{messages.entity_OmEmployee}" />
+		</f:facet>
+		<f:facet name="controls">
+			<h:panelGroup>
+				<h:graphicImage value="../img/ico_close.gif" id="hidelinkadd"
+					styleClass="hidelink" />
+				<rich:componentControl for="addPanel" attachTo="hidelinkadd"
+					operation="hide" event="onclick" />
+			</h:panelGroup>
+		</f:facet>
+		<div class="modalPanelForm">
+		<h:form>
+			
+			<h:panelGrid columns="1">
+				
+					<h:panelGrid columns="1">
+					
+
+            <s:decorate id="empIdField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_empId}</ui:define>
+                <h:inputText id="empId"
+                       disabled="#{omEmployeeHome.managed}"
+                       required="true"
+                           size="100"
+                      maxlength="100"
+                          value="#{omEmployeeHome.instance.empId}">
+                    <a4j:support event="onblur" reRender="empIdField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="empCodeField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_empCode}</ui:define>
+                <h:inputText id="empCode"
+                           size="30"
+                      maxlength="30"
+                          value="#{omEmployeeHome.instance.empCode}">
+                    <a4j:support event="onblur" reRender="empCodeField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="operatorIdField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_operatorId}</ui:define>
+                <h:inputText id="operatorId"
+                          value="#{omEmployeeHome.instance.operatorId}">
+                    <a4j:support event="onblur" reRender="operatorIdField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="userIdField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_userId}</ui:define>
+                <h:inputText id="userId"
+                           size="30"
+                      maxlength="30"
+                          value="#{omEmployeeHome.instance.userId}">
+                    <a4j:support event="onblur" reRender="userIdField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="empNameField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_empName}</ui:define>
+                <h:inputText id="empName"
+                           size="50"
+                      maxlength="50"
+                          value="#{omEmployeeHome.instance.empName}">
+                    <a4j:support event="onblur" reRender="empNameField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="realNameField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_realName}</ui:define>
+                <h:inputText id="realName"
+                           size="50"
+                      maxlength="50"
+                          value="#{omEmployeeHome.instance.realName}">
+                    <a4j:support event="onblur" reRender="realNameField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="sexField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_sex}</ui:define>
+                <h:inputTextarea id="sex"
+                               cols="80"
+                               rows="3"
+                              value="#{omEmployeeHome.instance.sex}"/>
+            </s:decorate>
+
+					
+
+            <s:decorate id="birthDateField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_birthDate}</ui:define>
+                <rich:calendar id="birthDate"
+                          value="#{omEmployeeHome.instance.birthDate}" datePattern="MM/dd/yyyy" />
+            </s:decorate>
+
+					
+
+            <s:decorate id="positionField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_position}</ui:define>
+                <h:inputText id="position"
+                          value="#{omEmployeeHome.instance.position}">
+                    <a4j:support event="onblur" reRender="positionField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="statusField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_status}</ui:define>
+                <h:inputTextarea id="status"
+                               cols="80"
+                               rows="3"
+                              value="#{omEmployeeHome.instance.status}"/>
+            </s:decorate>
+
+					
+
+            <s:decorate id="certificateTypeField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_certificateType}</ui:define>
+                <h:inputTextarea id="certificateType"
+                               cols="80"
+                               rows="3"
+                              value="#{omEmployeeHome.instance.certificateType}"/>
+            </s:decorate>
+
+					
+
+            <s:decorate id="certificateNoField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_certificateNo}</ui:define>
+                <h:inputText id="certificateNo"
+                           size="20"
+                      maxlength="20"
+                          value="#{omEmployeeHome.instance.certificateNo}">
+                    <a4j:support event="onblur" reRender="certificateNoField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="entryDateField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_entryDate}</ui:define>
+                <rich:calendar id="entryDate"
+                          value="#{omEmployeeHome.instance.entryDate}" datePattern="MM/dd/yyyy" />
+            </s:decorate>
+
+					
+
+            <s:decorate id="departureDateField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_departureDate}</ui:define>
+                <rich:calendar id="departureDate"
+                          value="#{omEmployeeHome.instance.departureDate}" datePattern="MM/dd/yyyy" />
+            </s:decorate>
+
+					
+
+            <s:decorate id="officePhoneField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_officePhone}</ui:define>
+                <h:inputText id="officePhone"
+                           size="12"
+                      maxlength="12"
+                          value="#{omEmployeeHome.instance.officePhone}">
+                    <a4j:support event="onblur" reRender="officePhoneField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="officeAddressField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_officeAddress}</ui:define>
+                <h:inputTextarea id="officeAddress"
+                               cols="80"
+                               rows="3"
+                              value="#{omEmployeeHome.instance.officeAddress}"/>
+            </s:decorate>
+
+					
+
+            <s:decorate id="officeZipcodeField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_officeZipcode}</ui:define>
+                <h:inputText id="officeZipcode"
+                           size="10"
+                      maxlength="10"
+                          value="#{omEmployeeHome.instance.officeZipcode}">
+                    <a4j:support event="onblur" reRender="officeZipcodeField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="officeEmailField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_officeEmail}</ui:define>
+                <h:inputText id="officeEmail"
+                           size="100"
+                      maxlength="128"
+                          value="#{omEmployeeHome.instance.officeEmail}">
+                    <a4j:support event="onblur" reRender="officeEmailField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="faxNoField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_faxNo}</ui:define>
+                <h:inputText id="faxNo"
+                           size="14"
+                      maxlength="14"
+                          value="#{omEmployeeHome.instance.faxNo}">
+                    <a4j:support event="onblur" reRender="faxNoField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="mobileNoField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_mobileNo}</ui:define>
+                <h:inputText id="mobileNo"
+                           size="14"
+                      maxlength="14"
+                          value="#{omEmployeeHome.instance.mobileNo}">
+                    <a4j:support event="onblur" reRender="mobileNoField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="msnNoField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_msnNo}</ui:define>
+                <h:inputText id="msnNo"
+                           size="16"
+                      maxlength="16"
+                          value="#{omEmployeeHome.instance.msnNo}">
+                    <a4j:support event="onblur" reRender="msnNoField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="homePhoneField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_homePhone}</ui:define>
+                <h:inputText id="homePhone"
+                           size="12"
+                      maxlength="12"
+                          value="#{omEmployeeHome.instance.homePhone}">
+                    <a4j:support event="onblur" reRender="homePhoneField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="homeAddressField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_homeAddress}</ui:define>
+                <h:inputText id="homeAddress"
+                           size="100"
+                      maxlength="128"
+                          value="#{omEmployeeHome.instance.homeAddress}">
+                    <a4j:support event="onblur" reRender="homeAddressField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="homeZipcodeField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_homeZipcode}</ui:define>
+                <h:inputText id="homeZipcode"
+                           size="10"
+                      maxlength="10"
+                          value="#{omEmployeeHome.instance.homeZipcode}">
+                    <a4j:support event="onblur" reRender="homeZipcodeField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="privateEmailField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_privateEmail}</ui:define>
+                <h:inputText id="privateEmail"
+                           size="100"
+                      maxlength="128"
+                          value="#{omEmployeeHome.instance.privateEmail}">
+                    <a4j:support event="onblur" reRender="privateEmailField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="politicalLandscapeField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_politicalLandscape}</ui:define>
+                <h:inputTextarea id="politicalLandscape"
+                               cols="80"
+                               rows="3"
+                              value="#{omEmployeeHome.instance.politicalLandscape}"/>
+            </s:decorate>
+
+					
+
+            <s:decorate id="degreeField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_degree}</ui:define>
+                <h:inputTextarea id="degree"
+                               cols="80"
+                               rows="3"
+                              value="#{omEmployeeHome.instance.degree}"/>
+            </s:decorate>
+
+					
+
+            <s:decorate id="directSupervisorField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_directSupervisor}</ui:define>
+                <h:inputText id="directSupervisor"
+                          value="#{omEmployeeHome.instance.directSupervisor}">
+                    <a4j:support event="onblur" reRender="directSupervisorField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="specialtyField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_specialty}</ui:define>
+                <h:inputTextarea id="specialty"
+                               cols="80"
+                               rows="10"
+                              value="#{omEmployeeHome.instance.specialty}"/>
+            </s:decorate>
+
+					
+
+            <s:decorate id="workDescField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_workDesc}</ui:define>
+                <h:inputTextarea id="workDesc"
+                               cols="80"
+                               rows="6"
+                              value="#{omEmployeeHome.instance.workDesc}"/>
+            </s:decorate>
+
+					
+
+            <s:decorate id="regDateField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_regDate}</ui:define>
+                <rich:calendar id="regDate"
+                          value="#{omEmployeeHome.instance.regDate}" datePattern="MM/dd/yyyy" />
+            </s:decorate>
+
+					
+
+            <s:decorate id="createDateField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_createDate}</ui:define>
+                <rich:calendar id="createDate"
+                          value="#{omEmployeeHome.instance.createDate}" datePattern="MM/dd/yyyy hh:mm a"/>
+            </s:decorate>
+
+					
+
+            <s:decorate id="lastModifyDateField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_lastModifyDate}</ui:define>
+                <rich:calendar id="lastModifyDate"
+                          value="#{omEmployeeHome.instance.lastModifyDate}" datePattern="MM/dd/yyyy" />
+            </s:decorate>
+
+					
+
+            <s:decorate id="orgidListField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_orgidList}</ui:define>
+                <h:inputText id="orgidList"
+                           size="100"
+                      maxlength="128"
+                          value="#{omEmployeeHome.instance.orgidList}">
+                    <a4j:support event="onblur" reRender="orgidListField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="orgIdField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_orgId}</ui:define>
+                <h:inputText id="orgId"
+                          value="#{omEmployeeHome.instance.orgId}">
+                    <a4j:support event="onblur" reRender="orgIdField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+
+					
+
+            <s:decorate id="notesField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_notes}</ui:define>
+                <h:inputTextarea id="notes"
+                               cols="80"
+                               rows="6"
+                              value="#{omEmployeeHome.instance.notes}"/>
+            </s:decorate>
+
+					
+
+            <s:decorate id="dnField" template="../layout/edit.xhtml">
+                <ui:define name="label">#{messages.entity_OmEmployee_dn}</ui:define>
+                <h:inputTextarea id="dn"
+                               cols="80"
+                               rows="3"
+                              value="#{omEmployeeHome.instance.dn}"/>
+            </s:decorate>
+
+					
+
+					<h:panelGrid columns="2">	
+						<a4j:commandButton value="#{messages.common_add_instance}"
+					action="#{omEmployeeHome.persist}"
+					reRender="omEmployeeListTable,messagePanel"
+					oncomplete="if (!#{facesContext.maximumSeverity.ordinal == 2})#{rich:component('editPanel')}.hide();" 
+					status="commonstatus"/>
+					<a4j:commandButton value="#{messages.common_back}"
+					oncomplete="#{rich:component('addPanel')}.hide();" status="commonstatus"/>
+					</h:panelGrid>
+					</h:panelGrid>
+				
+				
+			</h:panelGrid>
+		</h:form>
+		</div>
+	</rich:modalPanel>

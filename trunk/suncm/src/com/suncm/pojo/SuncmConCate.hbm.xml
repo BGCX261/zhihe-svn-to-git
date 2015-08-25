@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-2-12 22:14:30 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.suncm.pojo.SuncmConCate" table="suncm_con_cate" catalog="suncm">
+        <id name="conCategoryId" type="string">
+            <column name="CON_CATEGORY_ID" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <many-to-one name="suncmVoteMethods" class="com.suncm.pojo.SuncmVoteMethods" fetch="select">
+            <column name="VM_ID" length="32" not-null="true" />
+        </many-to-one>
+        <property name="conCategoryName" type="string">
+            <column name="CON_CATEGORY_NAME" length="200" not-null="true" />
+        </property>
+        <property name="isqueue" type="string">
+            <column name="ISQUEUE" length="1" />
+        </property>
+        <property name="isagridea" type="string">
+            <column name="ISAGRIDEA" length="1" />
+        </property>
+        <property name="isdpridea" type="string">
+            <column name="ISDPRIDEA" length="1" />
+        </property>
+        <property name="isrejidea" type="string">
+            <column name="ISREJIDEA" length="1" />
+        </property>
+        <property name="leastmem" type="string">
+            <column name="LEASTMEM" length="1" />
+        </property>
+        <property name="memreftime" type="string">
+            <column name="MEMREFTIME" length="14" />
+        </property>
+        <property name="decidereftime" type="string">
+            <column name="DECIDEREFTIME" length="1" />
+        </property>
+        <property name="forext1" type="string">
+            <column name="FOREXT1" length="20" />
+        </property>
+        <property name="forext2" type="string">
+            <column name="FOREXT2" length="100" />
+        </property>
+        <set name="suncmConInfos" inverse="true" lazy="true" table="suncm_con_info" fetch="select">
+            <key>
+                <column name="CON_CATEGORY_ID" length="32" not-null="true" />
+            </key>
+            <one-to-many class="com.suncm.pojo.SuncmConInfo" />
+        </set>
+    </class>
+</hibernate-mapping>

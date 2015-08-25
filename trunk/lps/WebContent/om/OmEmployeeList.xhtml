@@ -1,0 +1,248 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a4j="http://richfaces.org/a4j"
+    template="../layout/template.xhtml">
+
+<ui:define name="body">
+<a4j:queue requestDelay="100" />
+		<rich:panel rendered="#{!s:hasPermission('entity','OmEmployee:read')}">
+		<h:outputText value="#{messages.common_search_noright}"  />
+		</rich:panel>
+		
+<rich:panel rendered="#{s:hasPermission('entity','OmEmployee:read')}">
+		<f:facet name="header">#{messages.entity_OmEmployee}#{messages.common_search_result}  </f:facet>
+			<div class="results" id="omEmployeeListdiv">
+			<h:outputText value="#{messages.common_search_noresult}" rendered="#{omEmployeeHome.dataModel.rowCount ==0}" />
+			<a4j:region> 
+		<h:form>
+			
+				<rich:dataTable id="omEmployeeListTable" var="_omEmployee"
+					value="#{omEmployeeHome.dataModel}" rows="10" reRender="datascroller"
+					rowKeyVar="row" 
+					onRowMouseOver="this.style.backgroundColor='#F1F1F1'"
+					onRowMouseOut="this.style.backgroundColor='#{a4jSkin.tableBackgroundColor}'"
+					columnClasses="datacolumn1,datacolumn2" rendered="#{omEmployeeHome.dataModel.rowCount != 0}">
+
+					<f:facet name="header">
+						<h:outputText value="#{messages.entity_OmEmployee}#{messages.common_table_header}" />
+					</f:facet>
+
+
+<rich:column sortBy="#{'empId'}" filterBy="#{'empId'}" rendered="#{s:hasPermission('column','OmEmployee.empId:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_empId}</f:facet>
+            <h:outputText value="#{_omEmployee.empId}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.empId:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'empCode'}" filterBy="#{'empCode'}" rendered="#{s:hasPermission('column','OmEmployee.empCode:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_empCode}</f:facet>
+            <h:outputText value="#{_omEmployee.empCode}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.empCode:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'operatorId'}" filterBy="#{'operatorId'}" rendered="#{s:hasPermission('column','OmEmployee.operatorId:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_operatorId}</f:facet>
+            <h:outputText value="#{_omEmployee.operatorId}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.operatorId:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'userId'}" filterBy="#{'userId'}" rendered="#{s:hasPermission('column','OmEmployee.userId:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_userId}</f:facet>
+            <h:outputText value="#{_omEmployee.userId}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.userId:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'empName'}" filterBy="#{'empName'}" rendered="#{s:hasPermission('column','OmEmployee.empName:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_empName}</f:facet>
+            <h:outputText value="#{_omEmployee.empName}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.empName:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'realName'}" filterBy="#{'realName'}" rendered="#{s:hasPermission('column','OmEmployee.realName:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_realName}</f:facet>
+            <h:outputText value="#{_omEmployee.realName}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.realName:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'sex'}" filterBy="#{'sex'}" rendered="#{s:hasPermission('column','OmEmployee.sex:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_sex}</f:facet>
+            <h:outputText value="#{_omEmployee.sex}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.sex:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'birthDate'}" filterBy="#{'birthDate'}" rendered="#{s:hasPermission('column','OmEmployee.birthDate:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_birthDate}</f:facet>
+            <h:outputText value="#{_omEmployee.birthDate}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.birthDate:read')}">
+                <s:convertDateTime type="date" dateStyle="short"/>
+            </h:outputText>
+</rich:column>
+<rich:column sortBy="#{'position'}" filterBy="#{'position'}" rendered="#{s:hasPermission('column','OmEmployee.position:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_position}</f:facet>
+            <h:outputText value="#{_omEmployee.position}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.position:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'status'}" filterBy="#{'status'}" rendered="#{s:hasPermission('column','OmEmployee.status:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_status}</f:facet>
+            <h:outputText value="#{_omEmployee.status}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.status:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'certificateType'}" filterBy="#{'certificateType'}" rendered="#{s:hasPermission('column','OmEmployee.certificateType:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_certificateType}</f:facet>
+            <h:outputText value="#{_omEmployee.certificateType}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.certificateType:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'certificateNo'}" filterBy="#{'certificateNo'}" rendered="#{s:hasPermission('column','OmEmployee.certificateNo:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_certificateNo}</f:facet>
+            <h:outputText value="#{_omEmployee.certificateNo}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.certificateNo:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'entryDate'}" filterBy="#{'entryDate'}" rendered="#{s:hasPermission('column','OmEmployee.entryDate:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_entryDate}</f:facet>
+            <h:outputText value="#{_omEmployee.entryDate}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.entryDate:read')}">
+                <s:convertDateTime type="date" dateStyle="short"/>
+            </h:outputText>
+</rich:column>
+<rich:column sortBy="#{'departureDate'}" filterBy="#{'departureDate'}" rendered="#{s:hasPermission('column','OmEmployee.departureDate:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_departureDate}</f:facet>
+            <h:outputText value="#{_omEmployee.departureDate}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.departureDate:read')}">
+                <s:convertDateTime type="date" dateStyle="short"/>
+            </h:outputText>
+</rich:column>
+<rich:column sortBy="#{'officePhone'}" filterBy="#{'officePhone'}" rendered="#{s:hasPermission('column','OmEmployee.officePhone:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_officePhone}</f:facet>
+            <h:outputText value="#{_omEmployee.officePhone}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.officePhone:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'officeAddress'}" filterBy="#{'officeAddress'}" rendered="#{s:hasPermission('column','OmEmployee.officeAddress:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_officeAddress}</f:facet>
+            <h:outputText value="#{_omEmployee.officeAddress}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.officeAddress:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'officeZipcode'}" filterBy="#{'officeZipcode'}" rendered="#{s:hasPermission('column','OmEmployee.officeZipcode:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_officeZipcode}</f:facet>
+            <h:outputText value="#{_omEmployee.officeZipcode}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.officeZipcode:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'officeEmail'}" filterBy="#{'officeEmail'}" rendered="#{s:hasPermission('column','OmEmployee.officeEmail:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_officeEmail}</f:facet>
+            <h:outputText value="#{_omEmployee.officeEmail}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.officeEmail:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'faxNo'}" filterBy="#{'faxNo'}" rendered="#{s:hasPermission('column','OmEmployee.faxNo:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_faxNo}</f:facet>
+            <h:outputText value="#{_omEmployee.faxNo}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.faxNo:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'mobileNo'}" filterBy="#{'mobileNo'}" rendered="#{s:hasPermission('column','OmEmployee.mobileNo:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_mobileNo}</f:facet>
+            <h:outputText value="#{_omEmployee.mobileNo}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.mobileNo:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'msnNo'}" filterBy="#{'msnNo'}" rendered="#{s:hasPermission('column','OmEmployee.msnNo:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_msnNo}</f:facet>
+            <h:outputText value="#{_omEmployee.msnNo}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.msnNo:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'homePhone'}" filterBy="#{'homePhone'}" rendered="#{s:hasPermission('column','OmEmployee.homePhone:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_homePhone}</f:facet>
+            <h:outputText value="#{_omEmployee.homePhone}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.homePhone:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'homeAddress'}" filterBy="#{'homeAddress'}" rendered="#{s:hasPermission('column','OmEmployee.homeAddress:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_homeAddress}</f:facet>
+            <h:outputText value="#{_omEmployee.homeAddress}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.homeAddress:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'homeZipcode'}" filterBy="#{'homeZipcode'}" rendered="#{s:hasPermission('column','OmEmployee.homeZipcode:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_homeZipcode}</f:facet>
+            <h:outputText value="#{_omEmployee.homeZipcode}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.homeZipcode:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'privateEmail'}" filterBy="#{'privateEmail'}" rendered="#{s:hasPermission('column','OmEmployee.privateEmail:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_privateEmail}</f:facet>
+            <h:outputText value="#{_omEmployee.privateEmail}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.privateEmail:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'politicalLandscape'}" filterBy="#{'politicalLandscape'}" rendered="#{s:hasPermission('column','OmEmployee.politicalLandscape:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_politicalLandscape}</f:facet>
+            <h:outputText value="#{_omEmployee.politicalLandscape}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.politicalLandscape:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'degree'}" filterBy="#{'degree'}" rendered="#{s:hasPermission('column','OmEmployee.degree:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_degree}</f:facet>
+            <h:outputText value="#{_omEmployee.degree}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.degree:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'directSupervisor'}" filterBy="#{'directSupervisor'}" rendered="#{s:hasPermission('column','OmEmployee.directSupervisor:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_directSupervisor}</f:facet>
+            <h:outputText value="#{_omEmployee.directSupervisor}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.directSupervisor:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'specialty'}" filterBy="#{'specialty'}" rendered="#{s:hasPermission('column','OmEmployee.specialty:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_specialty}</f:facet>
+            <h:outputText value="#{_omEmployee.specialty}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.specialty:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'workDesc'}" filterBy="#{'workDesc'}" rendered="#{s:hasPermission('column','OmEmployee.workDesc:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_workDesc}</f:facet>
+            <h:outputText value="#{_omEmployee.workDesc}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.workDesc:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'regDate'}" filterBy="#{'regDate'}" rendered="#{s:hasPermission('column','OmEmployee.regDate:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_regDate}</f:facet>
+            <h:outputText value="#{_omEmployee.regDate}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.regDate:read')}">
+                <s:convertDateTime type="date" dateStyle="short"/>
+            </h:outputText>
+</rich:column>
+<rich:column sortBy="#{'createDate'}" filterBy="#{'createDate'}" rendered="#{s:hasPermission('column','OmEmployee.createDate:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_createDate}</f:facet>
+            <h:outputText value="#{_omEmployee.createDate}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.createDate:read')}">
+                <s:convertDateTime type="both" dateStyle="short"/>
+            </h:outputText>
+</rich:column>
+<rich:column sortBy="#{'lastModifyDate'}" filterBy="#{'lastModifyDate'}" rendered="#{s:hasPermission('column','OmEmployee.lastModifyDate:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_lastModifyDate}</f:facet>
+            <h:outputText value="#{_omEmployee.lastModifyDate}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.lastModifyDate:read')}">
+                <s:convertDateTime type="date" dateStyle="short"/>
+            </h:outputText>
+</rich:column>
+<rich:column sortBy="#{'orgidList'}" filterBy="#{'orgidList'}" rendered="#{s:hasPermission('column','OmEmployee.orgidList:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_orgidList}</f:facet>
+            <h:outputText value="#{_omEmployee.orgidList}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.orgidList:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'orgId'}" filterBy="#{'orgId'}" rendered="#{s:hasPermission('column','OmEmployee.orgId:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_orgId}</f:facet>
+            <h:outputText value="#{_omEmployee.orgId}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.orgId:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'notes'}" filterBy="#{'notes'}" rendered="#{s:hasPermission('column','OmEmployee.notes:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_notes}</f:facet>
+            <h:outputText value="#{_omEmployee.notes}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.notes:read')}"/>
+</rich:column>
+<rich:column sortBy="#{'dn'}" filterBy="#{'dn'}" rendered="#{s:hasPermission('column','OmEmployee.dn:read')}">
+	<f:facet name="header">#{messages.entity_OmEmployee_dn}</f:facet>
+            <h:outputText value="#{_omEmployee.dn}" rendered="#{s:hasPermission(_omEmployee,'OmEmployee.dn:read')}"/>
+</rich:column>
+
+<rich:column styleClass="action">
+						<f:facet name="header">#{messages.common_action}</f:facet>
+						
+						<a4j:commandLink ajaxSingle="true" id="editlink" rendered="#{s:hasPermission(_omEmployee,'OmEmployee:edit')}">
+						#{messages.common_edit_instance}
+         					<a4j:support id="editsupport" event="onclick"
+								oncomplete="#{rich:component('editPanel')}.show()">
+								<f:setPropertyActionListener value="#{row}"
+									target="#{omEmployeeHome.instance}" />
+							</a4j:support>
+						</a4j:commandLink>
+						#{' '}
+						<a4j:commandLink ajaxSingle="true" id="deletelink" rendered="#{s:hasPermission(_omEmployee,'OmEmployee:delete')}">
+						#{messages.common_delete_instance}
+							<a4j:support id="deletesupport" event="onclick"
+								oncomplete="#{rich:component('deletePanel')}.show()">
+								<f:setPropertyActionListener value="#{row}"
+									target="#{omEmployeeHome.instance}" />
+							</a4j:support>
+						</a4j:commandLink>
+
+					</rich:column>
+
+					<f:facet name="footer">
+
+						<rich:datascroller for="omEmployeeListTable" maxPages="20" align="left"
+							ajaxSingle="true" id="datascroller" rendered="omEmployeeHome.dataModel.rowCount >10">
+						</rich:datascroller>
+
+					</f:facet>
+				</rich:dataTable>
+				<a4j:status onstart="#{rich:component('wait')}.show()"
+		onstop="#{rich:component('wait')}.hide()" />
+
+				<a4j:commandLink ajaxSingle="true" id="addlink" action="#{omEmployeeHome.clearInstance}"
+					oncomplete="#{rich:component('addPanel')}.show()" rendered="#{s:hasPermission('entity','OmEmployee:add')}">
+						#{messages.common_add_instance}
+					</a4j:commandLink>
+
+			</h:form>
+			</a4j:region>
+			</div>
+		</rich:panel>
+
+		<ui:include src="OmEmployeeAddPane.xhtml" />
+		<ui:include src="OmEmployeeEditPane.xhtml" />
+		<ui:include src="OmEmployeeDeletePane.xhtml" />
+
+
+	</ui:define>
+</ui:composition>

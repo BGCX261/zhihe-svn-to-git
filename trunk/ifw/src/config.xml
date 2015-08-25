@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//spring//DTD BEAN/EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean id="SystemoutStep" class="com.ifw.demo.step.SystemoutStep">
+		
+	</bean>	
+	<bean id="PrepareDataStep" class="com.ifw.demo.step.PrepareDataStep">
+		
+	</bean>
+	<bean id="ReplyPageStep" class="com.ifw.demo.step.ReplyPageStep">
+		
+	</bean>
+</beans>

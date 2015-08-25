@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-2-12 22:14:30 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.suncm.pojo.SuncmMyGroup" table="suncm_my_group" catalog="suncm">
+        <id name="groupId" type="string">
+            <column name="GROUP_ID" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="groupName" type="string">
+            <column name="GROUP_NAME" length="56" not-null="true" />
+        </property>
+        <property name="userId" type="string">
+            <column name="USER_ID" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

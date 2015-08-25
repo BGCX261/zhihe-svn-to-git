@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312"?>
+<DmPrepareDptInfoFlow>
+
+	<Flow>
+	<!-- 根据机构id查询机构各类基本信息 -->
+		<Step ID="DmQueryDptBaseInfoStep" IJump0="posinfo" IJump1="errpage" />
+		<Step ID="DmQueryDptPosInfoStep" alias="posinfo" IJump0="userinfo" IJump1="errpage" />
+		<Step ID="DmQueryDptUserInfoStep" alias="userinfo" IJump0="priinfo" IJump1="errpage" />
+		<Step ID="DmQueryDptPriInfoStep" alias="priinfo" IJump0="successpage" IJump1="errpage" />
+	<!-- 返回系统首页面 -->
+		<Step ID="ReplyPageStep" alias="successpage" IFW_Reply="dm/dm_dpt_detail" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="dm/dm_dptdetail_error" IJump0="end"/>
+	
+	</Flow>
+
+</DmPrepareDptInfoFlow>

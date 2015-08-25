@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GB2312"?>
+<LogoffFlow>
+<!-- 退出登录 -->
+	<Flow>
+	<!-- 清理session -->
+		<Step ID="UserLogoffStep" IJump0="successpage"/>
+	<!-- 返回登录页面 -->
+		<Step ID="ReplyPageStep" alias="successpage" IFW_Reply="logon" IJump0="end"/>
+	
+	</Flow>
+
+</LogoffFlow>

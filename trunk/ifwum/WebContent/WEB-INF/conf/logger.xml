@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gb2312" standalone="yes" ?> 
+<root>
+	<!--define name="WEB-INF" value="$deploy-directory/.." /-->
+
+    <!-- Logger 配置 -->
+    <logger debugAll="false"
+    	pattern="[%d - %f:%l] - %t\n%s\n" debugPattern="[%d - %f:%l] - %t\n%s\n">
+    	
+    	<!-- Logger 输出器 -->
+    	<appender class="com.css.log.appenders.ConsoleAppender" level="debug" exclude="*.gdb"/>
+    	<!-- 文件输出器 
+    	参数：
+    		class       - 类名
+    		name        - 追加器名称（可以有多个文件输出器）
+    		file        - log文件名
+    		bufferSize  - 缓冲区大小，默认5000条记录，单位：条
+    		maxFileSize - 文件最大大小，默认512k，单位：K
+    		backup      - 当超过文件设置大小时，是否需要进行文件备份true|false
+    	-->
+    	<appender class="com.css.log.appenders.FileAppender" 
+    		name="system" file="$deploy-directory/../log/system.log" backup="false" level="debug" />
+    </logger>
+</root>

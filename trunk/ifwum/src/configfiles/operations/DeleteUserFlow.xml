@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GB2312"?>
+<DeleteUserFlow>
+
+	<Flow>
+	<!-- 创建用户 -->
+		<Step ID="DeleteUserStep" IJump0="successpage" IJump1="errpage" />
+	<!-- 返回系统首页面 -->
+		<Step ID="ReplyPageStep" alias="successpage" IFW_Reply="um/um_deleteuser_succ" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="um/um_manageuser_error" IJump0="end"/>
+	
+	</Flow>
+
+</DeleteUserFlow>

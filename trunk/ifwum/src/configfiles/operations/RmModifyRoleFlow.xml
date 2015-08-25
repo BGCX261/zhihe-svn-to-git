@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GB2312"?>
+<RmModifyRoleFlow>
+<!-- 目前暂无修改角色的功能，此流程暂时没有使用到 -->
+	<Flow>
+	<!-- 根据页面上送值修改一个角色,0:查询角色信息，返回修改页面，1:进行修改 -->
+		<Step ID="SwitchStep" alias="switch" switchSource="flag" IJump0="getroleinfo" IJump1="modifyrole"/>
+		<Step ID="RmQuerySingleRoleStep" alias="getroleinfo" IJump0="modifypage" IJump1="errpage"/>
+	<!-- 返回修改页面 -->
+		<Step ID="ReplyPageStep" alias="modifypage" IFW_Reply="rm/rm_modify_role" IJump0="end"/>
+		
+		<!-- 执行修改 -->
+		<Step ID="RmModifyroleStep" alias="modifyrole" IJump0="succpage" IJump1="errpage"/>
+	<!-- 返回成功页面 -->
+		<Step ID="ReplyPageStep" alias="succpage" IFW_Reply="rm/rm_modifyrole_succ" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="rm/rm_role_error" IJump0="end"/>
+	
+	</Flow>
+
+</RmModifyRoleFlow>

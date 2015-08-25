@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GB2312"?>
+<RmQueryRoleListFlow>
+
+	<Flow>
+	<!-- 查询角色列表 -->
+		<Step ID="RmQueryRoleListStep" IJump0="successpage" IJump1="errpage" />
+	<!-- 返回系统首页面 -->
+		<Step ID="ReplyPageStep" alias="successpage" IFW_Reply="rm/rm_managerole_index" IJump0="end"/>
+	<!-- 返回错误页面 -->
+		<Step ID="ReplyPageStep" alias="errpage" IFW_Reply="rm/rm_role_error" IJump0="end"/>
+	
+	</Flow>
+
+</RmQueryRoleListFlow>
